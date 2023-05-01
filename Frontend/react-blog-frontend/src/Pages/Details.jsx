@@ -5,7 +5,7 @@ export const store = createContext()
 const Details = (props) => {
     const [details, setDetails] = useState([])
     useEffect(()=>{
-        fetch("http://localhost:4001/")
+        fetch("http://localhost:4001/all")
         .then((res)=>res.json())
         .then((res)=>setDetails(res))
     })
