@@ -2,6 +2,7 @@ const {MongoClient}= require('mongodb');
 const url = "mongodb://127.0.0.1:27017"
 const client = new MongoClient(url);
 const data = require('../data')
+
 const insertDetails = async (data)=>{
   try {
     const database=client.db('BlogBackend');
@@ -23,8 +24,8 @@ const getDetails = async ()=>{
     const collection = database.collection('dataBlog');
     await client.connect();
     console.log("connected")
-    const data =await collection.find({})
-    console.log("connected")
+    const data =collection.find({})
+    console.log("data")
 
     // console.log(data)
     await client.close();
